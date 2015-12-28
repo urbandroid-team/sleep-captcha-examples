@@ -11,7 +11,7 @@
 
         <activity
             android:name=".ReverseCaptchaActivity"
-	    android:launchMode="singleTop"
+	        android:launchMode="singleTop"
             android:label="@string/captcha_label"
             android:exported="true"
             >

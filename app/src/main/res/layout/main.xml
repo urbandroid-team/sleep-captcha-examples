@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="#0099cc"
+             >
+
+    <TextView
+        android:id="@+id/timeout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:padding="15dp"
+        tools:text="23"
+        android:textColor="#33b5e5"
+        android:textSize="20sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:id="@+id/difficulty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        tools:text="Very Simple"
+        android:textColor="#8033b5e5"
+        android:textSize="50sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/captcha_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp"
+        android:padding="15dp"
+        tools:text="ERTNSHETKKLE"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/input_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        tools:text="ERTNSHETKKLE"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:layout_below="@id/captcha_text"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/done_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/done_button"/>
+
+</RelativeLayout>
