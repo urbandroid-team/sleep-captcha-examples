@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
-    package="com.urbandroid.slee.captcha.example"
+    package="com.urbandroid.sleep.captcha.example"
     xmlns:android="http://schemas.android.com/apk/res/android"
     >
 
@@ -20,8 +20,10 @@
                 <action android:name="com.urbandroid.sleep.captcha.intent.action.OPEN"/>
                 <action android:name="com.urbandroid.sleep.captcha.intent.action.CONFIG"/>
 
-		<category android:name="android.intent.category.LAUNCHER"/>
+<!-- Uncomment for testing
+		        <category android:name="android.intent.category.LAUNCHER"/>
                 <action android:name="android.intent.action.MAIN"/>
+-->
             </intent-filter>
         </activity>
     </application>
