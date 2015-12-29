@@ -55,11 +55,10 @@ You can check in which mode has the activity been started by
 
 and then make adjustments according to that. For example, when started in config mode, you might show a completely different layout than when starting in operational mode. The ReverseCaptcha doesn't do any of those checks as it doesn't offer a settings view (no `<action android:name="com.urbandroid.sleep.captcha.intent.action.CONFIG"/>` in the `AndroidManifest.xml`) and preview is the same as operational view.
 
-
-
-### TODO Na zaver:
+### Where to find your CAPTCHA:
 In Sleep as Android, you choose the active CAPTCHA in **Settings > CAPTCHA**. Once you build a new CAPTCHA apk and install it, your CAPTCHA will also appear there.
 
 ### Links
 * [Captcha-support library](http://sleep.urbandroid.org/documentation/developer-api/captcha-api/)
 * [CAPTCHA 2016 Hackathon](http://sleep.urbandroid.org/captcha-hackathon-12016/)
+* In case of any problems, open an issue on github or drop us a line at support@urbandroid.org
