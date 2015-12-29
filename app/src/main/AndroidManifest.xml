@@ -20,10 +20,10 @@
                 <action android:name="com.urbandroid.sleep.captcha.intent.action.OPEN"/>
                 <action android:name="com.urbandroid.sleep.captcha.intent.action.CONFIG"/>
 
-<!-- Uncomment for testing
+                <!-- Uncomment for testing
 		        <category android:name="android.intent.category.LAUNCHER"/>
                 <action android:name="android.intent.action.MAIN"/>
--->
+                 -->
             </intent-filter>
         </activity>
     </application>
