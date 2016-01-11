@@ -1,6 +1,7 @@
 package com.urbandroid.sleep.captcha.example;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,6 +19,14 @@ public class ReverseCaptchaActivity extends Activity {
 
     private CaptchaSupport captchaSupport; // include this in every captcha
 
+    private final RemainingTimeListener remainingTimeListener = new RemainingTimeListener() {
+        @Override
+        public void timeRemain(int seconds, int aliveTimeout) {
+            final TextView timeoutView = (TextView) findViewById(R.id.timeout);
+            timeoutView.setText(seconds + "/" + aliveTimeout);
+        }
+    };
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,13 +35,7 @@ public class ReverseCaptchaActivity extends Activity {
         captchaSupport = CaptchaSupportFactory.create(this); // include this in every captcha, in onCreate()
 
         // show timeout in TextView with id "timeout"
-        final TextView timeoutView = (TextView) findViewById(R.id.timeout);
-        captchaSupport.setRemainingTimeListener(new RemainingTimeListener() {
-            @Override
-            public void timeRemain(int seconds, int aliveTimeout) {
-                timeoutView.setText(seconds + "/" + aliveTimeout);
-            }
-        });
+        captchaSupport.setRemainingTimeListener(remainingTimeListener);
 
         // show difficulty in TextView with id "difficulty", read from captchaSupport.getDifficulty()
         final TextView difficultyView = (TextView) findViewById(R.id.difficulty);
@@ -58,6 +61,14 @@ public class ReverseCaptchaActivity extends Activity {
                 }
             }
         });
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        captchaSupport = CaptchaSupportFactory
+                .create(this, intent)
+                .setRemainingTimeListener(remainingTimeListener);
 
     }
 
@@ -89,5 +100,11 @@ public class ReverseCaptchaActivity extends Activity {
     public void onUserInteraction() {
         super.onUserInteraction();
         captchaSupport.alive(); // .alive() refreshes captcha timeout - intended to be sent on user interaction primarily, but can be called anytime anywhere
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        captchaSupport.destroy();
     }
 }

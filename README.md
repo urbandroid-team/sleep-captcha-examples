@@ -27,7 +27,10 @@ The heart of the CAPTCHA is the CaptchaActivity class, in the example this is `R
 
 + `private CaptchaSupport captchaSupport;` declaration which loads the captcha library (see [documentation of the Captcha library](https://github.com/urbandroid-team/sleep-captcha-support))
 + `onCreate()` hook which defines what happens when the activity is loaded
-+ `captchaSupport = CaptchaSupportFactory.create(this);` in the onCreate() hook
++ `onNewIntent()` hook which defines what happens when the activity is reopened
++ `captchaSupport = CaptchaSupportFactory.create(this);` in the onCreate(), onNewIntent() hook
++ `onDestroy()` hook which defines what happens when the activity is destroy
++ `captchaSupport.destroy();` in the onDestroy()
 
 ### Use of the CaptchaSupport library
 
